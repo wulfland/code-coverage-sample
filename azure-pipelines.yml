@@ -2,7 +2,7 @@
 variables:
     buildConfiguration: "Debug"
     testProject: "tests/MySample.Tests"
-    solution: "**/*.sln"
+    solution: "*.sln"
 
 trigger:
 - master
