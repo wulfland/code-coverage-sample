@@ -3,12 +3,19 @@ variables:
     buildConfiguration: "Debug"
     testProject: "tests/MySample.Tests"
     solution: "MySample.sln"
+    
+strategy:
+  matrix:
+    linux:
+      imageName: 'ubuntu-16.04'
+    windows:
+      imageName: 'vs2017-win2016'
 
 trigger:
 - master
 
 pool:
-  vmImage: 'Ubuntu-16.04' # 'vs2017-win2016'
+  vmImage: $(imageName)
 
 steps:
 - task: SonarCloudPrepare@1
@@ -25,7 +32,7 @@ steps:
 - script: |
     dotnet test --logger trx --no-build /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=$(Build.SourcesDirectory)/coverage/ $(testProject)
     dotnet tool install dotnet-reportgenerator-globaltool --tool-path . --version 4.0.0-rc4
-    reportgenerator "-reports:$(Build.SourcesDirectory)/coverage/coverage.opencover.xml" "-targetdir:coverage/Cobertura" "-reporttypes:Cobertura;HTMLInline;HTMLChart"
+    ./reportgenerator.exe "-reports:$(Build.SourcesDirectory)/coverage/coverage.opencover.xml" "-targetdir:coverage/Cobertura" "-reporttypes:Cobertura;HTMLInline;HTMLChart"
   displayName: 'Unit testing'
 
 - task: SonarSource.sonarcloud.ce096e50-6155-4de8-8800-4221aaeed4a1.SonarCloudAnalyze@1
