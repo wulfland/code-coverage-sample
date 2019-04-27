@@ -8,7 +8,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'vs2017-win2016' #'Ubuntu-16.04'
+  vmImage: 'Ubuntu-16.04' # 'vs2017-win2016'
 
 steps:
 - task: SonarCloudPrepare@1
