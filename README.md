@@ -7,6 +7,9 @@ This is a sample .NET Core application that shows how to do testing with code co
 - Displays Report in Azure Pipeline
 - Supports SonarQube/SonarCloud Code Coverage without any workarounds
 
+You can read the full story [here](https://writeabout.net/2019/04/27/net-core-code-coverage-done-right/)
+
+
 ## Build Status 
 [![Build Status](https://dev.azure.com/wulfland/mkaufmann/_apis/build/status/wulfland.code-coverage-sample?branchName=master)](https://dev.azure.com/wulfland/mkaufmann/_build/latest?definitionId=8&branchName=master)
 
