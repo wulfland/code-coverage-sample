@@ -13,7 +13,7 @@ pool:
 steps:
 - task: SonarCloudPrepare@1
   inputs:
-    SonarCloud: '18070eb7-e27b-4f12-941b-f27f4c30c63d'
+    SonarCloud: '66420b06-0308-4157-9b80-ef53c71c6596'
     organization: 'wulfland-github'
     projectKey: 'cov-demo'
     projectName: 'Coverage Demo'
