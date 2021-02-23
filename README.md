@@ -17,3 +17,4 @@ You can read the full story [here](https://writeabout.net/2019/04/27/net-core-co
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cov-demo&metric=alert_status)](https://sonarcloud.io/dashboard?id=cov-demo)
 
 ## Trigger new build
+test
